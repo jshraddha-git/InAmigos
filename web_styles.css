@@ -358,3 +358,78 @@ footer p {
   color: #ff6b6b;
   text-decoration: underline;
 }
+
+/* Container to control the maximum width of the video */
+.video-container {
+  float: right;
+  width: 50%;
+  min-width: 250px;
+  max-width: 350px;
+  margin: 0 0 20px 25px;
+  padding-right: 50px;
+}
+
+/* Styling the video element itself */
+video {
+  width: 100%;
+  /* Takes up 100% of its parent container */
+  height: auto;
+  /* Maintains the correct aspect ratio */
+  border-radius: 8px;
+  /* Optional: gives the video smooth, rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  /* Optional: adds a nice subtle shadow */
+}
+
+
+
+/* Clearfix for video container */
+.video-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 900px) {
+  .video-container {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+  }
+}
+
+.content .description strong {
+  color: #ff2c2c;
+  font-size: 18px;
+}
+
+/* The parent container holding the items */
+.funds-grid {
+  display: grid;
+  /* Creates 3 columns of equal width */
+  grid-template-columns: repeat(3, 1fr);
+  /* Adds a 20px gap horizontally and vertically between items */
+  gap: 20px;
+  padding: 20px 0;
+  margin-left: 70px;
+
+}
+
+/* Individual list item styling */
+.grid-item {
+  font-size: 18px;
+  line-height: 1.5;
+  /* Optional: keeps the text vertically aligned if some items wrap to two lines */
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive design: Switch to 1 column on smaller screens (tablets/phones) */
+@media (max-width: 768px) {
+  .funds-grid {
+    grid-template-columns: 1fr;
+    /* Stack items vertically */
+    gap: 15px;
+  }
+}
